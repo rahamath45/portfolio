@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8"   />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"  />
+      
+        <title> NISHA PORTFOLIO</title>
+        <link rel="stylesheet" href="style.css"/>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+  <script src="https://threejs.org/examples/js/geometries/TextGeometry.js"></script>
+  <script src="https://threejs.org/examples/js/loaders/FontLoader.js"></script>
 
+    </head>
+    <body> 
+        <div class="main">
+            <div class="navigation"> 
+                <ul>
+                <li><a href="#home"> <span class="isMobile"><img src="./assest/home.png" /> </span> <span>home</span></a> </li>
+                <li> <a href="#About"><span class="isMobile"><img src="./assest/about.png" /> </span><span>About</span> </a></li>
+                <li> <a href="#skills"><span class="isMobile"><img src="./assest/skills.png" /> </span><span>skills</span> </a></li>
+                <li><a href="#project"> <span class="isMobile"><img src="./assest/project.png" /></span> <span>project</span> </a></li>
+                <li> <a href="#contact"><span class="isMobile"><img src="./assest/contact.png" /> </span> <span>contact</span> </a></li>
+                </u1>
+            </div>
+                <div class="all-section">
+                 <div id="home"class="section home-layout">
+                    <div class="body-content">
+                        <h1 class="animate__animated animate__bounce home-content">Hi</h1>
+                        <h1 class="animate__animated animate__bounce home-content">I'm Rahamathu Nisha</h1>
+                        <h1 class="animate__animated animate__bounce home-content">Full Stack Developer</h1>
+                        <br>
+                        <a href="https://github.com/rahamath45" target="_blank" rel="noopener noreferrer"><img src="./assest/gitup.png"/></a>
+                        <a href="https://www.linkedin.com/in/rahamath-sulaiman-5b5495283/" target="_blank" rel="noopener noreferrer"><img src="./assest/download.png"/></a>
+                        <br>
+                        <button class="btn-resume"><a href="" target="_blank">Resume</a></button>
+                    </div>
+                    <div class="contact-logo">
+                        <img src="./assest/Rhome.png" alt="Home"/>
+                    </div>
+                 </div>
+                <div id="About" class=" section about-page">
+                     <div class="left-side">
+                        <h1 class="animate__animated animate__bounce home-content">About Me</h1>
+                        <h2>Hi, I'm a Well-qualified Full Stack Developer familiar with a wide range of programming utilities and languages.
+                             Knowledgeable of backend and frontend development requirements with database management.
+                              Handles any part of the process with ease. Collaborative team player with a willingness to learn in
+                               and grow with the organization.</h2>
+                     </div>
+                     <div class="right-side">
+                       <div class="about-images">
+                        <img src="./assest/html.png" alt="html"/>
+                        <img src="./assest/css.png" alt="css"/>
+                        <img src="./assest/js.png" alt="js"/>
+                        <img src="./assest/react.png" alt="react"/>
+                        <img src="./assest/mongo.png" alt="mongo"/>
+                        <img src="./assest/node.js" alt="node"/>
+                       </div>
+                     </div>
+                </div>
+                <div id="skills" class="section">
+                    <div class="skills-page">
+                          <div class="skills-left-side">
+                            <h1 class="animate__animated animate__bounce home-content skills-heading">Tech Stacks</h1>
+                            <div class="tech-stack">
+                                <img src="./assest/html.png" alt="htmlImage"/>
+                                <img src="./assest/css.png" alt="cssImage"/>
+                                <img src="./assest/bood.png" alt="boodImage"/>
+                                <img src="./assest/js.png" alt="jsImage"/>
+                                <img src="./assest/react.png" alt="reactImage"/>
+                                <img src="./assest/redux.png" alt="reduxImage"/>
+                                <img src="./assest/node.js" alt="nodeImage"/>
+                                <img src="./assest/mongo.png" alt="mongoImage"/>
+                                <img src="./assest/github.png" alt="githubImage"/>
+                                <img src="./assest/gitclone.png" alt="gitcloneImage"/>
+                                <img src="./assest/tailwind.svg" alt="tailwind"/>
+                            </div>
+                          </div>
+                          <div class="skills-right-side">
+    <canvas id="skillsCanvas"></canvas>
+  </div>
+                
+  <script>
+    const canvas = document.getElementById("skillsCanvas");
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      canvas.clientWidth / canvas.clientHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 400;
+
+    // Lights 🌙
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+    directionalLight.position.set(1, 1, 2);
+    scene.add(directionalLight);
+
+    const texts = [
+      "JavaScript", "Node", "React", "MongoDB", "HTML", "CSS",
+      "Express", "Netlify", "GitHub", "SQL", "MongoAtlas",
+      "Three.js", "Bootstrap", "API", "VSCode", "Render",
+      "Tailwind", "C++", "Firebase"
+    ];
+
+    const fontLoader = new THREE.FontLoader();
+    fontLoader.load("https://threejs.org/examples/fonts/helvetiker_regular.typeface.json", (font) => {
+      const radius = 150;
+
+      texts.forEach((text, i) => {
+        const textGeo = new THREE.TextGeometry(text, {
+          font: font,
+          size: 20,
+          height: 2,
+        });
+
+        const textMaterial = new THREE.MeshStandardMaterial({
+         color: 0x000000, // black
+          metalness: 0.3,
+          roughness: 0.6,
+        });
+
+        const textMesh = new THREE.Mesh(textGeo, textMaterial);
+
+        // 🌐 Position text around a sphere using spherical coordinates
+        const phi = Math.acos(-1 + (2 * i) / texts.length);
+        const theta = Math.sqrt(texts.length * Math.PI) * phi;
+
+        textMesh.position.x = radius * Math.cos(theta) * Math.sin(phi);
+        textMesh.position.y = radius * Math.sin(theta) * Math.sin(phi);
+        textMesh.position.z = radius * Math.cos(phi);
+
+        textMesh.lookAt(0, 0, 0); // make the text face the center
+        scene.add(textMesh);
+      });
+
+      animate();
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      scene.rotation.y += 0.005;
+      scene.rotation.x += 0.002;
+      renderer.render(scene, camera);
+    }
+
+    // Responsiveness 📱
+    window.addEventListener("resize", () => {
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    });
+  </script>    
+  
+                      </div>
+                </div>
+                <div>
+                    <div id="project" class="project-head">
+                         <h1 class="animate__animated animate__bounce home-content">Projects</h1>
+                         <h5>Common Login Credentials</h5>
+                         <p>Email:<span>rahmathsulaiman45@gmail.com</span></p>
+                          <p>password:<span>nisha</span></p>
+                    </div>
+                    <div class="project-page">
+                        <div class="project-content">
+                            <h1>Reciepe App</h1>
+                             <img src="./assest/reciepe.png" alt="reciepeimage"/>
+                             <div class="btn-group">
+                                <a href="https://github.com/rahamath45/project2.git" target="__blank" class="btn-repo">Front-End Source code</a>
+                                <a href="https://reciepesa.netlify.app/" target="_blank" class="btn-site" >Live Site</a>
+                             </div>
+                        </div>
+                        <div class="project-content">
+                            <h1>Team Task Manager</h1>
+                             <img src="./assest/Team.png" alt="reciepeimage"/>
+                             <div class="btn-group">
+                                <a href="https://github.com/rahamath45/demofrontend.git" target="__blank" class="btn-repo">Front-End Source code</a>
+                                <a  target="_blank" class="btn-site" > Redux Model</a>
+                                <a href="https://github.com/rahamath45/demoB29.git" target="__blank" class="btn-repo">Back-End Source code</a>
+                             </div>
+                        </div>
+                        <div class="project-content">
+                            <h1>Fitness Booking App</h1>
+                             <img src="./assest/fitness.png" alt="reciepeimage"/>
+                             <div class="btn-group">
+                                <a href="https://github.com/rahamath45/finalproject.git" target="__blank" class="btn-repo">Front-End Source code</a>
+                                 <a href="https://fitnessfinal.netlify.app/" target="_blank" class="btn-site" >Live Site</a>
+                                <a href="https://github.com/rahamath45/finalprojct-B.git" target="__blank" class="btn-repo">Back-End Source code</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <section id="contact" style="padding:50px 20px; background:#565177;">
+  <div style="max-width:600px; margin:0 auto; text-align:center;">
+    <h2>Contact Me</h2>
+    <form id="contactForm" style="display:flex; flex-direction:column; gap:15px;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:10px; font-size:16px;">
+      <input type="email" name="email" placeholder="Your Email" required style="padding:10px; font-size:16px;">
+      <textarea name="message" rows="5" placeholder="Your Message" required style="padding:10px; font-size:16px;"></textarea>
+      <button type="submit" style="padding:12px; font-size:16px; cursor:pointer ;background:#2710bb;">Send Message</button>
+    </form>
+    <p id="formMessage" style="margin-top:10px; color:green;"></p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const messageEl = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Get form values
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    // Basic validation
+    if(!name || !email || !message){
+      alert("Please fill in all fields");
+      return;
+    }
+
+    // Example: send via Formspree (no backend needed)
+    // Replace YOUR_FORMSPREE_URL with your actual endpoint
+    fetch('https://formspree.io/f/xvgwwenz', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({ name, email, message })
+    })
+    .then(res => {
+      if(res.ok){
+        messageEl.textContent = "Message sent successfully!";
+        form.reset();
+      } else {
+        messageEl.textContent = "Error sending message.";
+      }
+    })
+    .catch(err => {
+      messageEl.textContent = "Error sending message.";
+      console.error(err);
+    });
+  });
+</script>
+
+            </div>
+        </div>
+    </body>  
+</html>
+ 
