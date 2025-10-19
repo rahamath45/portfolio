@@ -9,6 +9,12 @@
     --animate-delay: 1s;
     --animate-repeat: 1;
 }
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 
  a{
    text-decoration: none;
@@ -49,25 +55,24 @@ width: 100%;
  }
 
 .skills-page {
-    display: grid;
-    grid-template-columns: 50vw 2fr;
-    position: absolute;
-    padding: 1%;
-    margin: 1%;
-    width: 100%;
-    place-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 5%;
+  place-items: center;
+  position: relative;
 }
    
- .section{
-   width: 97vw;
-   height: 100vh;
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-    font-size: larger;
-    margin:20px;
-    text-align: center;
- }
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 5%;
+  box-sizing: border-box;
+}
+
  .tech-stack>img {
     width: 124px;
     height: 124px;
@@ -165,13 +170,12 @@ canvas {
 .about-page>.left-side {
     z-index: 1;
 }
+
 .about-page {
-    display: grid;
-    grid-template-columns: 50vw 2fr;
-    gap: 5rem;
-    padding: 1%;
-    margin: 1%;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  padding: 2rem 5%;
 }
 
 
@@ -194,13 +198,17 @@ canvas {
     transform-origin: center bottom;
 }
 .btn-resume {
-    padding: 10px;
+         padding: 10px;
     margin: 5px;
     font-size: 14px;
     font-weight: 700;
     background-color: #9cb839;
     border: none;
     cursor: pointer;
+}
+.btn-resume:hover {
+  background: #190a8c;
+  transform: scale(1.05);
 }
 .about-page>.left-side>h1 {
     color: #ff0;
@@ -279,11 +287,12 @@ img {
     overflow-clip-margin: content-box;
     overflow: clip;
 }
-
- body {
-    font-family: Poppins, sans-serif;
-    background-color: #565177;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #9999f1;
+  color: #222;
 }
+
 .project-head {
     max-height: 20vh;
 }
@@ -366,7 +375,10 @@ h5 {
     font-weight: bold;
     unicode-bidi: isolate;
 }
-
+.social-links a {
+  margin: 0 10px;
+  color: #fff;
+}
 
  div {
     display: block;
@@ -384,6 +396,11 @@ h5 {
     transition: .5s 
 ease-in-out;  
 }
+.project-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
 .project-content>h1 {
     font-size: 100%;
 }
@@ -408,7 +425,7 @@ ease-in-out;
 }
 .all-section{
     margin-top: 40px;
-
+     margin-bottom: 80px;
 }
 
 .home-layout{
@@ -464,9 +481,8 @@ section {
   .about-page > .left-side {
     width: 100%;
     text-align: center;
-   font-size: 15px;
-   padding-top: 180px;
-   padding-left: 30px;
+   font-size: 10px;
+     padding: 40px 20px 0;
   }
 
   .about-page > .right-side {
@@ -500,9 +516,29 @@ section {
           height: 36px;
     }
  
-.project-page{
-     width:250%;
+.project-page {
+         width: 100%;              /* Remove any overflow */
+    flex-direction: column;   /* Stack vertically */
+    align-items: center;      /* Center the cards */
+    justify-content: center;
+           gap: 0.3rem;        /* Add spacing between cards */
+    padding: 10px 10px;
+    box-sizing: border-box;
+    overflow-x: hidden; 
 }
+.project-head{
+         max-height: 30vh;
+}
+.project-head > h5{
+            display: block;
+    font-size: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+
 
   .skills-right-side {
     width: 100%;
@@ -519,9 +555,9 @@ section {
   }
      
     .project-content {
-       
-        height: 50%;
-        padding: 4px;
+        height: 49%;
+        width: 44%;
+        padding: 1px;
     }
     .btn-group>a {
         font-size: 50%;
@@ -531,6 +567,14 @@ section {
     border: none;
     cursor: pointer;
     }
+    .project-content>h1{
+          font-size: 60%;
+    }
+ 
+    .home-content {
+    font-family: Kanit, sans-serif;
+    font-size: 34px;
+}
     }
 
 
