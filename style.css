@@ -386,7 +386,7 @@ h5 {
 }
 .project-content{
       width: 200px;
-    height: 250px;
+    height: 280px;
     overflow: hidden;
     text-align: center;
     border-radius: 5px;
@@ -399,6 +399,9 @@ ease-in-out;
 .project-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.btn-group > p {
+    font-size: 8px;
 }
 
 .project-content>h1 {
@@ -570,6 +573,9 @@ section {
     .project-content>h1{
           font-size: 60%;
     }
+    .btn-group > p {
+    font-size: 4px;
+}
  
     .home-content {
     font-family: Kanit, sans-serif;
