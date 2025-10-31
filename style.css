@@ -86,7 +86,7 @@ width: 100%;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
-  gap:1rem;
+ 
   
 }
 
@@ -339,7 +339,7 @@ h5 {
 }
 .project-head>h1 {
     color: #ff0;
-    font-size: 35px;
+    font-size: 45px;
 }
 .project-page {
     display: flex;
@@ -351,13 +351,13 @@ h5 {
 }
 .project-content>img {
     object-fit: cover;
-    width: 80%;
-    height: 40%;
+    width: 90%;
+    height: 50%;
 }
 .btn-group {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    
     gap: .25rem;
     justify-content: space-around;
     align-items: center;
@@ -378,7 +378,6 @@ h5 {
     text-decoration: none;
 }
 .btn-site {
-    width: 64px;
     color: #fff;
     background: linear-gradient(90deg, #fed54a, #ff9347);
 }
@@ -408,24 +407,24 @@ h5 {
     display: block;
     unicode-bidi: isolate;
 }
-.project-content{
-      width: 200px;
-    height: 280px;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, .5);
-    transition: .5s 
-ease-in-out;  
+.project-content {
+  width: 320px;
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+  transition: .4s ease-in-out;
 }
+
 .project-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 .btn-group > p {
-    font-size: 8px;
+    font-size: 14px;
 }
 
 .project-content>h1 {
@@ -538,14 +537,16 @@ ease-in-out;
       display:none;
      
     }
-    ul{
-        justify-content: end;
-        font-size: 20px;
-        top:0;
-        bottom:auto;
-        gap: 1rem;
-        
-    }
+   ul {
+  justify-content: end;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize; /* only first letter uppercase */
+  gap: 1.5rem;
+  top: 0;
+  bottom: auto;
+}
+
    
      li:hover{
      color: black; 
@@ -576,6 +577,11 @@ ease-in-out;
   .certificates-container {
     gap: 20px;
   }
+   ul{
+      
+        font-size: 11px;
+    }
+   
 
   .certificate-card img {
     height: 160px;
@@ -596,7 +602,7 @@ ease-in-out;
 }
   .project-head>h1 {
     color: #ff0;
-    font-size: 15px;
+    font-size: 24px;
 }
 #project, #contact {
   scroll-margin-top: 0px;
@@ -715,7 +721,7 @@ ease-in-out;
   }
      
     .project-content {
-        height: 49%;
+         height: 49%;
         width: 44%;
         padding: 1px;
     }
@@ -733,6 +739,9 @@ ease-in-out;
     .btn-group > p {
     font-size: 6px;
 }
+  .project-content img {
+    height: 60px;
+  }
  
     .home-content {
     font-family: Kanit, sans-serif;
